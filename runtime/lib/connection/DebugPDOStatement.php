@@ -85,7 +85,9 @@ class DebugPDOStatement extends PDOStatement
                 if (is_resource($boundValue)) {
                     $boundValue = '[BLOB]';
                 }
-
+                if ($boundValue === null) {
+                    $boundValue = '';
+                }
                 $sql = str_replace($pos, $boundValue, $sql);
             }
         }
