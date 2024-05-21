@@ -83,4 +83,4 @@ jobs:
               run: vendor/bin/phpunit
               working-directory: ./
               env:
-                SYMFONY_DEPRECATIONS_HELPER: "disabled=1"
+                SYMFONY_DEPRECATIONS_HELPER: weak
