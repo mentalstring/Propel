@@ -231,7 +231,7 @@ protected static function cleanupSlugPart(\$slug, \$replacement = '" . $this->ge
 {
     // transliterate
     if (function_exists('iconv')) {
-        \$slug = iconv('utf-8', 'us-ascii//TRANSLIT', \$slug);
+        \$slug = iconv('utf-8', 'us-ascii//TRANSLIT', (string)\$slug);
     }
 
     // lowercase

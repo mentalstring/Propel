@@ -931,7 +931,7 @@ abstract class " . $this->getClassname() . " extends " . $parentClass . "
         if (null === \$comparison) {
             if (is_array(\$$variableName)) {
                 \$comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', \$$variableName)) {
+            } elseif (preg_match('/[\%\*]/', (string)\$$variableName)) {
                 \$$variableName = str_replace('*', '%', \$$variableName);
                 \$comparison = Criteria::LIKE;
             }
