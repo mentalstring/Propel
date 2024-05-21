@@ -79,7 +79,7 @@ class PropelDateTime extends DateTime
         return $dateTimeObject;
     }
 
-    public static function isTimestamp($value)
+    public static function isTimestamp($value): bool
     {
         if (!is_numeric($value)) {
             return false;

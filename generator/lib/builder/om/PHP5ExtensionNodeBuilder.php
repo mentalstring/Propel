@@ -26,7 +26,7 @@ class PHP5ExtensionNodeBuilder extends ObjectBuilder
      *
      * @return string
      */
-    public function getUnprefixedClassname()
+    public function getUnprefixedClassname(): string
     {
         return $this->getTable()->getPhpName() . 'Node';
     }

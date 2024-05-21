@@ -23,7 +23,7 @@ class PHP5TableMapBuilder extends OMBuilder
      *
      * @return string
      */
-    public function getPackage()
+    public function getPackage(): string
     {
         return parent::getPackage() . '.map';
     }
@@ -44,7 +44,7 @@ class PHP5TableMapBuilder extends OMBuilder
      *
      * @return string
      */
-    public function getUnprefixedClassname()
+    public function getUnprefixedClassname(): string
     {
         return $this->getTable()->getPhpName() . 'TableMap';
     }

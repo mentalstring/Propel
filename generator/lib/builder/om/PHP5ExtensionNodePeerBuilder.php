@@ -26,7 +26,7 @@ class PHP5ExtensionNodePeerBuilder extends PeerBuilder
      *
      * @return string
      */
-    public function getUnprefixedClassname()
+    public function getUnprefixedClassname(): string
     {
         return $this->getStubNodeBuilder()->getClassname() . 'Peer';
     }

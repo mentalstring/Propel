@@ -26,7 +26,7 @@ class QueryBuilder extends OMBuilder
      *
      * @return string
      */
-    public function getPackage()
+    public function getPackage(): string
     {
         return parent::getPackage() . ".om";
     }
@@ -47,7 +47,7 @@ class QueryBuilder extends OMBuilder
      *
      * @return string
      */
-    public function getUnprefixedClassname()
+    public function getUnprefixedClassname(): string
     {
         return $this->getBuildProperty('basePrefix') . $this->getStubQueryBuilder()->getUnprefixedClassname();
     }

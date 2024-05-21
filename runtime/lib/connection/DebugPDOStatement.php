@@ -86,7 +86,7 @@ class DebugPDOStatement extends PDOStatement
                     $boundValue = '[BLOB]';
                 }
 
-                $sql = str_replace($pos, $boundValue, $sql);
+                $sql = str_replace($pos, (string)$boundValue, $sql);
             }
         }
 

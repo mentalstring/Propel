@@ -49,7 +49,7 @@ class PropelCollection extends ArrayObject implements Serializable
      *
      * @return array
      */
-    public function getData()
+    public function getData(): array
     {
         return $this->getArrayCopy();
     }
@@ -309,7 +309,7 @@ class PropelCollection extends ArrayObject implements Serializable
      *
      * @return array The previous collection
      */
-    public function clear()
+    public function clear(): array
     {
         return $this->exchangeArray(array());
     }

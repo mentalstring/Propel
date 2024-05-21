@@ -198,7 +198,7 @@ class PropelXMLParser extends PropelParser
      *
      * @return boolean
      */
-    protected function hasOnlyTextNodes(DomNode $node)
+    protected function hasOnlyTextNodes(DomNode $node): bool
     {
         foreach ($node->childNodes as $childNode) {
             if ($childNode->nodeType != XML_CDATA_SECTION_NODE && $childNode->nodeType != XML_TEXT_NODE) {

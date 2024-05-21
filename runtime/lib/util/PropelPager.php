@@ -303,7 +303,7 @@ class PropelPager implements Countable, Iterator
      *
      * @return int 1
      */
-    public function getFirstPage()
+    public function getFirstPage(): string
     {
         return '1';
     }
@@ -313,7 +313,7 @@ class PropelPager implements Countable, Iterator
      *
      * @return boolean
      */
-    public function atFirstPage()
+    public function atFirstPage(): bool
     {
         return $this->getPage() == $this->getFirstPage();
     }
@@ -338,7 +338,7 @@ class PropelPager implements Countable, Iterator
      *
      * @return boolean
      */
-    public function atLastPage()
+    public function atLastPage(): bool
     {
         return $this->getPage() == $this->getLastPage();
     }
@@ -369,7 +369,7 @@ class PropelPager implements Countable, Iterator
      *
      * @return array $links
      */
-    public function getPrevLinks($range = 5)
+    public function getPrevLinks($range = 5): array
     {
         $total = $this->getTotalPages();
         $start = $this->getPage() - 1;
@@ -415,7 +415,7 @@ class PropelPager implements Countable, Iterator
      *
      * @return bool Last page complete or not
      */
-    public function isLastPageComplete()
+    public function isLastPageComplete(): bool
     {
         return !($this->getTotalRecordCount() % $this->max);
     }

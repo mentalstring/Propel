@@ -32,7 +32,7 @@ class ExtensionQueryInheritanceBuilder extends OMBuilder
      *
      * @return string
      */
-    public function getUnprefixedClassname()
+    public function getUnprefixedClassname(): string
     {
         return $this->getChild()->getClassName() . 'Query';
     }

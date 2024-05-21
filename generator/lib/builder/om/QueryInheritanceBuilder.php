@@ -33,7 +33,7 @@ class QueryInheritanceBuilder extends OMBuilder
      *
      * @return string
      */
-    public function getUnprefixedClassname()
+    public function getUnprefixedClassname(): string
     {
         return $this->getBuildProperty('basePrefix') . $this->getNewStubQueryInheritanceBuilder($this->getChild())->getUnprefixedClassname();
     }
@@ -43,7 +43,7 @@ class QueryInheritanceBuilder extends OMBuilder
      *
      * @return string
      */
-    public function getPackage()
+    public function getPackage(): string
     {
         return ($this->getChild()->getPackage() ? $this->getChild()->getPackage() : parent::getPackage()) . ".om";
     }
@@ -263,7 +263,7 @@ class " . $this->getClassname() . " extends " . $baseClassname . " {
 ";
     }
 
-    protected function getClassKeyCondition()
+    protected function getClassKeyCondition(): string
     {
         $child = $this->getChild();
         $col = $child->getColumn();

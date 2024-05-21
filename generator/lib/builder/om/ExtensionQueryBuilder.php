@@ -26,7 +26,7 @@ class ExtensionQueryBuilder extends OMBuilder
      *
      * @return string
      */
-    public function getUnprefixedClassname()
+    public function getUnprefixedClassname(): string
     {
         return $this->getTable()->getPhpName() . 'Query';
     }

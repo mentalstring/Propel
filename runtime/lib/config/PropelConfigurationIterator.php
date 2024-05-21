@@ -47,7 +47,7 @@ class PropelConfigurationIterator extends RecursiveIteratorIterator
      *
      * @return string
      */
-    public function getNamespace()
+    public function getNamespace(): string
     {
         return implode('.', $this->namespaceStack);
     }
