@@ -53,6 +53,7 @@ class NestedSetRecursiveIterator implements RecursiveIterator
         return implode('.', $key);
     }
 
+    #[\ReturnTypeWillChange]
     public function next()
     {
         $nextNode = null;
