@@ -8,7 +8,7 @@ jobs:
         env:
             DB: mysql
             DB_USER: root
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-22.04
         strategy:
             fail-fast: false
             matrix:
@@ -82,3 +82,5 @@ jobs:
             - name: Run Tests
               run: vendor/bin/phpunit
               working-directory: ./
+              env:
+                SYMFONY_DEPRECATIONS_HELPER: "disabled=1"
