@@ -68,6 +68,10 @@ jobs:
               run: |
                   echo "SET GLOBAL sql_mode = ''" | mysql -u root -proot mysql              
 
+            - name: Add hosts to /etc/hosts
+              run: |
+                  sudo echo "127.0.0.1 db" | sudo tee -a /etc/hosts
+
             - name: setup database
               run: |
                   sh -c "if [ '$DB' = 'mysql' ]; then mysql -u root -proot mysql -e 'SET FOREIGN_KEY_CHECKS = 0; DROP DATABASE IF EXISTS test; DROP SCHEMA IF EXISTS second_hand_books; DROP SCHEMA IF EXISTS contest; DROP DATABASE IF EXISTS reverse_bookstore; DROP SCHEMA IF EXISTS bookstore_schemas; SET FOREIGN_KEY_CHECKS = 1;'; fi"
