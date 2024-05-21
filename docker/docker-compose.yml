@@ -6,6 +6,8 @@ services:
       dockerfile: Dockerfile
     working_dir: /usr/src/app
     command: phpunit
+    links:
+      - db
     volumes:
       - ../:/usr/src/app
     environment:
@@ -13,11 +15,11 @@ services:
       - STARTUP_COMMAND_1=composer install
       - STARTUP_COMMAND_2=bash test/reset_tests.sh
       - PHP_IDE_CONFIG="serverName=propel"
-      - XDEBUG_MODE=debug
-      - XDEBUG_SESSION=1
+#      - XDEBUG_MODE=debug
+#      - XDEBUG_SESSION=1
 
   db:
-    image: percona
+    image: mysql:8.0
     command: >
       mysqld
       --sql-mode="NO_ENGINE_SUBSTITUTION"
@@ -26,4 +28,5 @@ services:
       --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+#      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: 'root'
