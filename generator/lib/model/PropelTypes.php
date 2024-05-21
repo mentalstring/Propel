@@ -394,6 +394,6 @@ class PropelTypes
      */
     public static function isPhpArrayType($phpType): bool
     {
-        return strtoupper($phpType) === self::PHP_ARRAY;
+        return strtoupper((string)$phpType) === self::PHP_ARRAY;
     }
 }
