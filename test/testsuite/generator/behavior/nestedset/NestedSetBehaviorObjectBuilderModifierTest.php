@@ -47,8 +47,9 @@ class NestedSetBehaviorObjectBuilderModifierTest extends BookstoreNestedSetTestB
     public function testObjectAttributes()
     {
         $expectedAttributes = array('nestedSetQueries');
+        $ref = new ReflectionClass(Table9::class);
         foreach ($expectedAttributes as $attribute) {
-            $this->assertClassHasAttribute($attribute, 'Table9');
+            $this->assertTrue($ref->hasProperty($attribute));
         }
     }
 
