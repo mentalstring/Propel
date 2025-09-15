@@ -191,7 +191,7 @@ abstract class " . $this->getClassname() . " {
      * @return                 $nodeObjectClassname
      * @throws PropelException
      */
-    public static function createNewRootNode(\$obj, PropelPDO \$con = null)
+    public static function createNewRootNode(\$obj, ?PropelPDO \$con = null)
     {
         if (\$con === null)
             \$con = Propel::getConnection($peerClassname::DATABASE_NAME, Propel::CONNECTION_WRITE);
@@ -236,7 +236,7 @@ abstract class " . $this->getClassname() . " {
      * @return                 $nodeObjectClassname
      * @throws PropelException
      */
-    public static function insertNewRootNode(\$obj, PropelPDO \$con = null)
+    public static function insertNewRootNode(\$obj, ?PropelPDO \$con = null)
     {
         if (\$con === null)
             \$con = Propel::getConnection($peerClassname::DATABASE_NAME, Propel::CONNECTION_WRITE);
@@ -293,7 +293,7 @@ abstract class " . $this->getClassname() . " {
      * @param      PropelPDO Connection to use.
      * @return array Array of root nodes.
      */
-    public static function retrieveNodes(\$criteria, \$ancestors = false, \$descendants = false, PropelPDO \$con = null)
+    public static function retrieveNodes(\$criteria, \$ancestors = false, \$descendants = false, ?PropelPDO \$con = null)
     {
         \$criteria = $nodePeerClassname::buildFamilyCriteria(\$criteria, \$ancestors, \$descendants);
         \$stmt = " . $this->getStubPeerBuilder()->getClassname() . "::doSelectStmt(\$criteria, \$con);
@@ -322,7 +322,7 @@ abstract class " . $this->getClassname() . " {
      * @param      PropelPDO Connection to use.
      * @return   $nodeObjectClassname
      */
-    public static function retrieveNodeByPK(\$pk, \$ancestors = false, \$descendants = false, PropelPDO \$con = null)
+    public static function retrieveNodeByPK(\$pk, \$ancestors = false, \$descendants = false, ?PropelPDO \$con = null)
     {
         throw new PropelException('retrieveNodeByPK() not implemented yet.');
     }
@@ -348,7 +348,7 @@ abstract class " . $this->getClassname() . " {
      * @param      PropelPDO Connection to use.
      * @return   $objectClassname
      */
-    public static function retrieveNodeByNP(\$np, \$ancestors = false, \$descendants = false, PropelPDO \$con = null)
+    public static function retrieveNodeByNP(\$np, \$ancestors = false, \$descendants = false, ?PropelPDO \$con = null)
     {
         \$criteria = new Criteria($peerClassname::DATABASE_NAME);
         \$criteria->add(self::NPATH_COLNAME, \$np, Criteria::EQUAL);
@@ -372,7 +372,7 @@ abstract class " . $this->getClassname() . " {
      * @param      PropelPDO Connection to use.
      * @return " . $this->getStubNodeBuilder()->getClassname() . "
      */
-    public static function retrieveRootNode(\$descendants = false, PropelPDO \$con = null)
+    public static function retrieveRootNode(\$descendants = false, ?PropelPDO \$con = null)
     {
         return self::retrieveNodeByNP('1', false, \$descendants, \$con);
     }
@@ -406,7 +406,7 @@ abstract class " . $this->getClassname() . " {
      *       seem to be standardized (i.e. mssql), so maybe it needs to be moved
      *       to DBAdapter.
      */
-    public static function moveNodeSubTree(\$srcPath, \$dstPath, PropelPDO \$con = null)
+    public static function moveNodeSubTree(\$srcPath, \$dstPath, ?PropelPDO \$con = null)
     {
         if (substr(\$dstPath, 0, strlen(\$srcPath)) == \$srcPath)
             throw new PropelException('Cannot move a node subtree within itself.');
@@ -476,7 +476,7 @@ abstract class " . $this->getClassname() . " {
      * @throws PropelException
      * @todo       This is currently broken for simulated 'onCascadeDelete's.
      */
-    public static function deleteNodeSubTree(\$nodePath, PropelPDO \$con = null)
+    public static function deleteNodeSubTree(\$nodePath, ?PropelPDO \$con = null)
     {
         if (\$con === null)
             \$con = Propel::getConnection($peerClassname::DATABASE_NAME, Propel::CONNECTION_WRITE);
