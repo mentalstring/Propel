@@ -375,7 +375,7 @@ abstract class " . $this->getClassname() . " implements IteratorAggregate {
      * @param      PropelPDO \$con     Connection to use if retrieving from database.
      * @return " . $this->getStubNodeBuilder()->getClassname() . "
      */
-    public function getChildNodeAt(\$i, \$querydb = false, PropelPDO \$con = null)
+    public function getChildNodeAt(\$i, \$querydb = false, ?PropelPDO \$con = null)
     {
         if (\$querydb &&
             !\$this->obj->isNew() &&
@@ -404,7 +404,7 @@ abstract class " . $this->getClassname() . " implements IteratorAggregate {
      * @param      PropelPDO \$con     Connection to use if retrieving from database.
      * @return " . $this->getStubNodeBuilder()->getClassname() . "
      */
-    public function getFirstChildNode(\$querydb = false, PropelPDO \$con = null)
+    public function getFirstChildNode(\$querydb = false, ?PropelPDO \$con = null)
     {
         return \$this->getChildNodeAt(1, \$querydb, \$con);
     }
@@ -423,7 +423,7 @@ abstract class " . $this->getClassname() . " implements IteratorAggregate {
      * @param      boolean   \$querydb True if child should be retrieved from database.
      * @param      PropelPDO \$con     Connection to use if retrieving from database.
      */
-    public function getLastChildNode(\$querydb = false, PropelPDO \$con = null)
+    public function getLastChildNode(\$querydb = false, ?PropelPDO \$con = null)
     {
         \$lastNode = null;
 
@@ -478,7 +478,7 @@ abstract class " . $this->getClassname() . " implements IteratorAggregate {
      * @param      PropelPDO \$con     Connection to use if retrieving from database.
      * @return " . $this->getStubNodeBuilder()->getClassname() . "
      */
-    public function getSiblingNode(\$prev = false, \$querydb = false, PropelPDO \$con = null)
+    public function getSiblingNode(\$prev = false, \$querydb = false, ?PropelPDO \$con = null)
     {
         \$nidx = \$this->getNodeIndex();
 
@@ -512,7 +512,7 @@ abstract class " . $this->getClassname() . " implements IteratorAggregate {
      * @param      PropelPDO \$con     Connection to use if retrieving from database.
      * @return " . $this->getStubNodeBuilder()->getClassname() . "
      */
-    public function getParentNode(\$querydb = true, PropelPDO \$con = null)
+    public function getParentNode(\$querydb = true, ?PropelPDO \$con = null)
     {
         if (\$querydb &&
             \$this->parentNode === null &&
@@ -549,7 +549,7 @@ abstract class " . $this->getClassname() . " implements IteratorAggregate {
      * @param      PropelPDO \$con     Connection to use if retrieving from database.
      * @return array
      */
-    public function getAncestors(\$querydb = false, PropelPDO \$con = null)
+    public function getAncestors(\$querydb = false, ?PropelPDO \$con = null)
     {
         \$ancestors = array();
         \$parentNode = \$this;
@@ -627,7 +627,7 @@ abstract class " . $this->getClassname() . " implements IteratorAggregate {
      * @param " . $this->getStubNodeBuilder()->getClassname() . " \$beforeNode Node to insert before.
      * @param      PropelPDO \$con Connection to use.
      */
-    public function addChildNode(\$node, \$beforeNode = null, PropelPDO \$con = null)
+    public function addChildNode(\$node, \$beforeNode = null, ?PropelPDO \$con = null)
     {
         if (\$this->obj->isNew() && !\$node->obj->isNew())
             throw new PropelException('Cannot add stored nodes to a new node.');
@@ -708,7 +708,7 @@ abstract class " . $this->getClassname() . " implements IteratorAggregate {
      * @param      PropelPDO \$con       Connection to use.
      * @throws PropelException
      */
-    public function moveChildNode(\$node, \$direction, PropelPDO \$con = null)
+    public function moveChildNode(\$node, \$direction, ?PropelPDO \$con = null)
     {
         throw new PropelException('moveChildNode() not implemented yet.');
     }
@@ -726,7 +726,7 @@ abstract class " . $this->getClassname() . " implements IteratorAggregate {
      * @param      boolean   \$recurse If true, descendants will be saved as well.
      * @param      PropelPDO \$con     Connection to use.
      */
-    public function save(\$recurse = false, PropelPDO \$con = null)
+    public function save(\$recurse = false, ?PropelPDO \$con = null)
     {
         if (\$this->obj->isDeleted())
             throw new PropelException('Cannot save deleted node.');
@@ -759,7 +759,7 @@ abstract class " . $this->getClassname() . " implements IteratorAggregate {
      * @return void
      * @throws PropelException
      */
-    public function delete(PropelPDO \$con = null)
+    public function delete(?PropelPDO \$con = null)
     {
         if (\$this->obj->isDeleted()) {
             throw new PropelException('This node has already been deleted.');
