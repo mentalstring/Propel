@@ -233,7 +233,7 @@ class Column extends XMLElement
 
             if ($this->getAttribute('valueSet', null) !== null) {
                 if (version_compare(PHP_VERSION, '5.3.0', '>=')) {
-                    $valueSet = str_getcsv($this->getAttribute("valueSet"));
+                    $valueSet = str_getcsv($this->getAttribute("valueSet"), ",", "\"", "\\");
                 } else {
                     // unfortunately, no good fallback for PHP 5.2
                     $valueSet = explode(',', $this->getAttribute("valueSet"));
@@ -242,7 +242,7 @@ class Column extends XMLElement
                 $this->valueSet = $valueSet;
             } elseif (preg_match('/enum\((.*?)\)/i', $this->getAttribute('sqlType', ''), $matches)) {
                 if (version_compare(PHP_VERSION, '5.3.0', '>=')) {
-                    $valueSet = str_getcsv($matches['1'], ',', '\'');
+                    $valueSet = str_getcsv($matches['1'], ',', '\'', "\\");
                 } else {
                     // unfortunately, no good fallback for PHP 5.2
                     $valueSet = array();
