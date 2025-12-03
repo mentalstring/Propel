@@ -190,7 +190,7 @@ class PropelCollection extends ArrayObject implements Serializable
      */
     public function isOdd()
     {
-        return (boolean) ($this->getInternalIterator()->key() % 2);
+        return (bool) ($this->getInternalIterator()->key() % 2);
     }
 
     /**
@@ -397,7 +397,7 @@ class PropelCollection extends ArrayObject implements Serializable
      */
     public function getIterator(): Iterator
     {
-        $this->iterator = new ArrayIterator($this);
+        $this->iterator = parent::getIterator();
 
         return $this->iterator;
     }

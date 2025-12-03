@@ -74,7 +74,7 @@ class PropelSQLDiffTask extends AbstractPropelDataModelTask
      */
     public function setCaseInsensitive($isCaseInsensitive)
     {
-        $this->isCaseInsensitive = (boolean) $isCaseInsensitive;
+        $this->isCaseInsensitive = (bool) $isCaseInsensitive;
     }
 
     /**

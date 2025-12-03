@@ -978,7 +978,7 @@ class ModelCriteria extends Criteria
      */
     public function endUse()
     {
-        if (isset($this->aliases[$this->modelAlias])) {
+        if (!empty($this->modelAlias) && isset($this->aliases[$this->modelAlias])) {
             $this->removeAlias($this->modelAlias);
         }
         $primaryCriteria = $this->getPrimaryCriteria();
