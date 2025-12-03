@@ -622,7 +622,7 @@ class Column extends XMLElement
      */
     public function setNotNull($status)
     {
-        $this->isNotNull = (boolean) $status;
+        $this->isNotNull = (bool) $status;
     }
 
     /**
@@ -643,7 +643,7 @@ class Column extends XMLElement
      */
     public function setPrimaryString($v)
     {
-        $this->isPrimaryString = (boolean) $v;
+        $this->isPrimaryString = (bool) $v;
     }
 
     /**
@@ -662,7 +662,7 @@ class Column extends XMLElement
      */
     public function setPrimaryKey($v)
     {
-        $this->isPrimaryKey = (boolean) $v;
+        $this->isPrimaryKey = (bool) $v;
     }
 
     /**
@@ -678,7 +678,7 @@ class Column extends XMLElement
      */
     public function setNodeKey($nk)
     {
-        $this->isNodeKey = (boolean) $nk;
+        $this->isNodeKey = (bool) $nk;
     }
 
     /**
@@ -710,7 +710,7 @@ class Column extends XMLElement
      */
     public function setNestedSetLeftKey($nslk)
     {
-        $this->isNestedSetLeftKey = (boolean) $nslk;
+        $this->isNestedSetLeftKey = (bool) $nslk;
     }
 
     /**
@@ -726,7 +726,7 @@ class Column extends XMLElement
      */
     public function setNestedSetRightKey($nsrk)
     {
-        $this->isNestedSetRightKey = (boolean) $nsrk;
+        $this->isNestedSetRightKey = (bool) $nsrk;
     }
 
     /**
@@ -742,7 +742,7 @@ class Column extends XMLElement
      */
     public function setTreeScopeKey($tsk)
     {
-        $this->isTreeScopeKey = (boolean) $tsk;
+        $this->isTreeScopeKey = (bool) $tsk;
     }
 
     /**
@@ -1261,7 +1261,7 @@ class Column extends XMLElement
      */
     public function setAutoIncrement($value)
     {
-        $this->isAutoIncrement = (boolean) $value;
+        $this->isAutoIncrement = (bool) $value;
     }
 
     /**

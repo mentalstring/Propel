@@ -721,7 +721,7 @@ class PropelPDO extends PDO
 
             switch ($detailName) {
 
-                case 'slow';
+                case 'slow':
                     $value = $now['microtime'] - $debugSnapshot['microtime'] >= $this->getLoggingConfig('details.slow.threshold', self::DEFAULT_SLOW_THRESHOLD) ? 'YES' : ' NO';
                     break;
 

@@ -857,7 +857,7 @@ abstract class " . $this->getClassname() . " extends " . $parentClass . " ";
      * @return mixed Formatted date/time value as string or $dateTimeClass object (if format is null), null if column is null" . ($handleMysqlDate ? ', and 0 if column value is ' . $mysqlInvalidDateString : '');
         } else {
             $script .= "
-     * @return mixed Formatted date/time value as string or (integer) unix timestamp (if format is null), null if column is null" . ($handleMysqlDate ? ', and 0 if column value is ' . $mysqlInvalidDateString : '');
+     * @return mixed Formatted date/time value as string or (int) unix timestamp (if format is null), null if column is null" . ($handleMysqlDate ? ', and 0 if column value is ' . $mysqlInvalidDateString : '');
         }
         $script .= "
      * @throws PropelException - if unable to parse/validate the date/time value.
@@ -1940,7 +1940,7 @@ abstract class " . $this->getClassname() . " extends " . $parentClass . " ";
             if (is_string(\$v)) {
                 \$v = in_array(strtolower(\$v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
             } else {
-                \$v = (boolean) \$v;
+                \$v = (bool) \$v;
             }
         }
 ";

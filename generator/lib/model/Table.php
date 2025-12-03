@@ -997,7 +997,7 @@ class Table extends ScopedElement implements IDMethod
      */
     public function setContainsForeignPK($b)
     {
-        $this->containsForeignPK = (boolean) $b;
+        $this->containsForeignPK = (bool) $b;
     }
 
     /**
@@ -1542,7 +1542,7 @@ class Table extends ScopedElement implements IDMethod
      */
     public function setAbstract($v)
     {
-        $this->abstractValue = (boolean) $v;
+        $this->abstractValue = (bool) $v;
     }
 
     /**
@@ -1789,7 +1789,7 @@ class Table extends ScopedElement implements IDMethod
      */
     public function setForReferenceOnly($v)
     {
-        $this->forReferenceOnly = (boolean) $v;
+        $this->forReferenceOnly = (bool) $v;
     }
 
     /**

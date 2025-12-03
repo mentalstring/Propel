@@ -266,7 +266,7 @@ class PropelSchemaReverseTask extends PDOTask
      */
     public function setSamePhpName($v)
     {
-        $this->samePhpName = (boolean) $v;
+        $this->samePhpName = (bool) $v;
     }
 
     /**
@@ -276,7 +276,7 @@ class PropelSchemaReverseTask extends PDOTask
      */
     public function setAddVendorInfo($v)
     {
-        $this->addVendorInfo = (boolean) $v;
+        $this->addVendorInfo = (bool) $v;
     }
 
     /**
