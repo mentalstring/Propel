@@ -1,11 +1,10 @@
-version: '3'
 services:
   php:
     build:
       context: .
       dockerfile: Dockerfile
     working_dir: /usr/src/app
-    command: composer update && bash test/reset_tests.sh && vendor/bin/phpunit
+    command: sh -c "composer update && bash test/reset_tests.sh && vendor/bin/phpunit"
     volumes:
       - ../:/usr/src/app
 
